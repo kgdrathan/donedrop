@@ -1,4 +1,4 @@
-# DoneDrop Sorter
+# DoneDrop
 
 An Obsidian plugin that automatically moves completed tasks to the bottom of their lists.
 
