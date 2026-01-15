@@ -6,11 +6,23 @@
   "scripts": {
     "dev": "node esbuild.config.mjs",
     "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
-    "version": "node version-bump.mjs && git add manifest.json versions.json"
+    "version": "node version-bump.mjs && git add manifest.json versions.json",
+    "publish": "npm publish"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "keywords": [
+    "obsidian",
+    "plugin",
+    "sort",
+    "tasks",
+    "completed",
+    "automation"
+  ],
+  "author": "Gnan Deep Rathan K",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/kgdrathan/donedrop.git"
+  },
   "devDependencies": {
     "@types/node": "^25.0.8",
     "@typescript-eslint/eslint-plugin": "^8.53.0",
