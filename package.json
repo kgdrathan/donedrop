@@ -21,7 +21,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/kgdrathan/donedrop.git"
+    "url": "https://github.com/kgdrathan/donedrop"
   },
   "devDependencies": {
     "@types/node": "^25.0.8",
