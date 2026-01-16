@@ -1,6 +1,6 @@
 {
   "name": "donedrop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Obsidian plugin to auto-sort completed tasks",
   "main": "main.js",
   "scripts": {
