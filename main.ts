@@ -6,7 +6,7 @@ export default class DoneDropSorter extends Plugin {
     private readonly DEBOUNCE_DELAY = 1000;
     private readonly CHECKBOX_UPDATE_DELAY = 200;
 
-    async onload() {
+    onload() {
         // console.log('Loading DoneDrop Sorter');
 
         this.registerEvent(this.app.vault.on('modify', (file) => {
