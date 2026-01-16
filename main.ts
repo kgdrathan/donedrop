@@ -2,20 +2,22 @@ import { Plugin, TFile, Editor, MarkdownView, MarkdownPostProcessorContext } fro
 import { TaskSorter } from './src/sorter';
 
 export default class DoneDropSorter extends Plugin {
-    private timer: any;
+    private timer: NodeJS.Timeout | null = null;
     private readonly DEBOUNCE_DELAY = 1000;
     private readonly CHECKBOX_UPDATE_DELAY = 200;
 
     async onload() {
-        console.log('Loading DoneDrop Sorter');
+        // console.log('Loading DoneDrop Sorter');
 
-        this.registerEvent(this.app.vault.on('modify', this.onFileModify.bind(this)));
+        this.registerEvent(this.app.vault.on('modify', (file) => {
+            if (file instanceof TFile) void this.onFileModify(file);
+        }));
         this.registerEvent(this.app.workspace.on('editor-change', this.onEditorChange.bind(this)));
         this.registerMarkdownPostProcessor(this.onMarkdownPostProcess.bind(this));
     }
 
     onunload() {
-        console.log('Unloading DoneDrop Sorter');
+        // console.log('Unloading DoneDrop Sorter');
     }
 
     private async onFileModify(file: TFile) {
@@ -37,7 +39,7 @@ export default class DoneDropSorter extends Plugin {
                 setTimeout(() => {
                     const file = this.app.vault.getAbstractFileByPath(context.sourcePath);
                     if (file instanceof TFile && file.extension === 'md') {
-                        this.handleSort(file);
+                        void this.handleSort(file);
                     }
                 }, this.CHECKBOX_UPDATE_DELAY);
             });
