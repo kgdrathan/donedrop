@@ -1,7 +1,7 @@
 {
 	"id": "donedrop",
 	"name": "DoneDrop",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"minAppVersion": "0.15.0",
 	"description": "Automatically moves completed tasks to the bottom of their lists.",
 	"author": "Gnan Deep Rathan K",
